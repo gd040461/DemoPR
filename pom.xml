@@ -11,7 +11,7 @@
     </parent>
     <groupId>com.cerner.soarian.sf.sample</groupId>
     <artifactId>rcc-sample</artifactId>
-    <version>0.0.12-SNAPSHOT</version>
+    <version>0.0.14-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>rcc-sample</name>
     <description>Sample Spring Boot Service App for Soarian Financials Arch - using Maven</description>
