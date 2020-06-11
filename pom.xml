@@ -21,7 +21,7 @@
   </distributionManagement>
   <repositories>
     <repository>
-      <id>rev-cycle-cloud-nexus-site</id>
+      <id>rev-cycle-cloud-nexus-site1</id>
       <url>http://repo.ccs.cerner.corp/nexus/content/repositories/ccs-snapshot/</url>
     </repository>
   </repositories>
