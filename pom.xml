@@ -4,14 +4,14 @@
   <parent>
     <groupId>com.cerner.rccloud</groupId>
     <artifactId>rccloud-parent-pom</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>RELEASABLE-SNAPSHOT</version>
     <relativePath/>
   </parent>
-  <groupId>com.cerner.revcycle.sample</groupId>
-  <artifactId>rcc-sample</artifactId>
-  <version>0.0.14-SNAPSHOT</version>
+  <groupId>com.cerner.soarian.sf.sample</groupId>
+  <artifactId>rcc-sample1</artifactId>
+  <version>0.0.019-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>rcc-sample1</name>
+  <name>rcc-sample</name>
   <description>Sample Spring Boot Service App for Soarian Financials Arch - using Maven</description>
   <distributionManagement>
     <site>
@@ -21,21 +21,11 @@
   </distributionManagement>
   <repositories>
     <repository>
-      <id>rev-cycle-cloud-nexus-site</id>
+      <id>rev-cycle-cloud-nexus-site1</id>
       <url>http://repo.ccs.cerner.corp/nexus/content/repositories/ccs-snapshot/</url>
     </repository>
   </repositories>
   <dependencies>
-    <dependency>
-      <groupId>com.cerner.rccloud</groupId>
-      <artifactId>rcc-tibco-binder</artifactId>
-      <version>RELEASABLE-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-stream-test-support</artifactId>
-      <scope>test</scope>
-    </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -120,7 +110,7 @@
     <dependency>
       <groupId>com.cerner.rccloud</groupId>
       <artifactId>alva-service-access-utility</artifactId>
-      <version>0.3.0-SNAPSHOT</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>javax.ws.rs</groupId>
@@ -157,10 +147,6 @@
     <dependency>
       <groupId>com.cerner.rccloud</groupId>
       <artifactId>rccloud-core-data-spring</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.liquibase</groupId>
-      <artifactId>liquibase-core</artifactId>
     </dependency>
   </dependencies>
   <build>
@@ -210,9 +196,7 @@
             <configuration>
               <resources>
                 <resource>
-                  <directory>&#xD;
-                                        ${basedir}/target/site/api-docs/swagger-ui-3.20.1-custom/swagger-ui-files/&#xD;
-                                    </directory>
+                  <directory>${basedir}/target/site/api-docs/swagger-ui-3.20.1-custom/swagger-ui-files/</directory>
                 </resource>
               </resources>
               <outputDirectory>${basedir}/target/site/api-docs/</outputDirectory>
@@ -224,10 +208,25 @@
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
       </plugin>
-      <plugin>
-        <groupId>org.liquibase</groupId>
-        <artifactId>liquibase-maven-plugin</artifactId>
-      </plugin>
     </plugins>
+    <testSourceDirectory>${projectTestSourceDirectory}</testSourceDirectory>
   </build>
+  <properties>
+    <projectTestSourceDirectory>src/test/java</projectTestSourceDirectory>
+    <projectTestSourceDirectory>src/test/intergration</projectTestSourceDirectory>
+  </properties>
+  <profiles>
+    <profile>
+      <id>without-integration-test</id>
+      <properties>
+        <projectTestSourceDirectory>src/test/java</projectTestSourceDirectory>
+      </properties>
+    </profile>
+    <profile>
+      <id>only-integration-test</id>
+      <properties>
+        <projectTestSourceDirectory>src/test/integration</projectTestSourceDirectory>
+      </properties>
+    </profile>
+  </profiles>
 </project>
