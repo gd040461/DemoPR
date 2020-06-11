@@ -8,7 +8,7 @@
     <relativePath/>
   </parent>
   <groupId>com.cerner.soarian.sf.sample</groupId>
-  <artifactId>rcc-sample1</artifactId>
+  <artifactId>rcc-sample11</artifactId>
   <version>0.0.114-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>rcc-sample</name>
