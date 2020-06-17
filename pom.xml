@@ -4,12 +4,12 @@
   <parent>
     <groupId>com.cerner.rccloud</groupId>
     <artifactId>rccloud-parent-pom</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.11-SNAPSHOT</version>
     <relativePath/>
   </parent>
   <groupId>com.cerner.revcycle.sample</groupId>
   <artifactId>rcc-sample</artifactId>
-  <version>0.0.16-SNAPSHOT</version> <!-- Goutam is doing bad-->
+  <version>0.0.11-SNAPSHOT</version> <!-- Goutam is doing bad-->
   <packaging>jar</packaging>
   <name>rcc-sample</name>
   <description>Sample Spring Boot Service App for Soarian Financials Arch - using Maven</description>
