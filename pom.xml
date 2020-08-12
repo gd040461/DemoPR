@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.cerner.revcycle.sample</groupId>
     <artifactId>rcc-sample</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.13-SNAPSHOT</version>
     <!--gg-->
     <packaging>jar</packaging>
     <name>rcc-sample</name>
